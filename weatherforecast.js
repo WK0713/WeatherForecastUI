@@ -1,11 +1,11 @@
 const weatherforecast = {template:`
-<div class="container border border-success rounded-pill mt-5">
+<div class="container border border-secondary rounded-pill mt-5">
         <div class="row">
-            <label class="col-2 col-form-label border-end border-success fw-bold" for="inputCountry">Country</label>
-            <div class="col-2 p-0 border-end border-success">
+            <label class="col-2 col-form-label border-end border-secondary fw-bold" for="inputCountry">Country</label>
+            <div class="col-2 p-0 border-end border-secondary">
                 <input class="form-control border-top-0 border-start-0 border-bottom-0 rounded-0" type="text" id="inputCountry" value="Malaysia" disabled>
             </div>            
-            <label class="col-2 col-form-label border-end border-success fw-bold" for="inputCity">City</label>
+            <label class="col-2 col-form-label border-end border-secondary fw-bold" for="inputCity">City</label>
             <div class="col-6 p-0">
                 <select class="form-select border-0 rounded-start-0 rounded-end-pill" id="inputCity" v-model="CitySelected" v-on:change="getDailyForecast()">
                     <option v-for="city in cities">{{city.City}}, {{city.State}}</option>
@@ -17,7 +17,7 @@ const weatherforecast = {template:`
     <div class="container text-center mt-5">
         <div class="row gx-3">
             <div class="col" v-for="daily in dailyForecastData">
-                <div class="border rounded-4 p-2 shadow bg-secondary-subtle">
+                <div class="border rounded-4 p-2 shadow bg-secondary-subtle fw-bold">
                     <p class="m-0">{{getDay(daily.dt)}}</p>
                     <p class="m-0">{{getDate(daily.dt)}}</p>
                     <img :src="iconPath+daily.weather[0].icon+iconType">
